@@ -1,15 +1,17 @@
+// Matrix Background and Full Site Interaction
+
 document.addEventListener('DOMContentLoaded', function () {
     // Enhanced Matrix Background
     const canvas = document.getElementById('matrix');
     if (canvas) {
         const ctx = canvas.getContext('2d');
         const chars = "01 本当の痛みを知らない者に、真の平和は理解できない。";
-        const fontSize = 16;
+        const fontSize = 18;
         let columns = 0;
         let rainDrops = [];
         let animationId;
         let lastTime = 0;
-        const frameDelay = 30;
+        const frameDelay = 50;
 
         function initMatrix() {
             canvas.width = window.innerWidth;
@@ -17,10 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
             columns = Math.floor(canvas.width / fontSize);
             rainDrops = Array(columns).fill(0);
 
-            if (animationId) {
-                cancelAnimationFrame(animationId);
-            }
-
+            if (animationId) cancelAnimationFrame(animationId);
             lastTime = 0;
             animationId = requestAnimationFrame(animateMatrix);
         }
@@ -34,14 +33,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         function drawMatrix() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.06)';
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-            gradient.addColorStop(0, '#0f0');
-            gradient.addColorStop(0.5, '#0ff');
-            gradient.addColorStop(1, '#f0f');
-            ctx.fillStyle = gradient;
             ctx.font = `bold ${fontSize}px monospace`;
 
             for (let i = 0; i < rainDrops.length; i++) {
@@ -49,16 +43,19 @@ document.addEventListener('DOMContentLoaded', function () {
                     ? chars.charAt(Math.floor(Math.random() * chars.length))
                     : String.fromCharCode(0x30A0 + Math.random() * 96);
 
-                const x = i * fontSize + (Math.random() * 2 - 1);
-                ctx.fillText(text, x, rainDrops[i] * fontSize);
+                const x = i * fontSize;
+                const y = rainDrops[i] * fontSize;
 
-                if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                    rainDrops[i] = Math.random() > 0.8
-                        ? Math.floor(Math.random() * -10)
-                        : 0;
+                ctx.fillStyle = '#0F0';
+                ctx.shadowColor = '#0F0';
+                ctx.shadowBlur = 8;
+                ctx.fillText(text, x, y);
+
+                if (y > canvas.height && Math.random() > 0.975) {
+                    rainDrops[i] = 0;
+                } else {
+                    rainDrops[i]++;
                 }
-
-                rainDrops[i]++;
             }
         }
 
@@ -71,9 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         window.addEventListener('beforeunload', () => {
-            if (animationId) {
-                cancelAnimationFrame(animationId);
-            }
+            if (animationId) cancelAnimationFrame(animationId);
         });
     }
 
@@ -187,3 +182,4 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
