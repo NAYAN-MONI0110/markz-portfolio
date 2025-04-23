@@ -1,24 +1,24 @@
-// Matrix Background and Full Site Interaction
-
 document.addEventListener('DOMContentLoaded', function () {
-    // Enhanced Matrix Background
+    // Initialize EmailJS
+    emailjs.init('YOUR_PUBLIC_KEY'); // Replace with your actual public key from EmailJS
+
+    // Matrix Background Animation
     const canvas = document.getElementById('matrix');
     if (canvas) {
         const ctx = canvas.getContext('2d');
         const chars = "01 本当の痛みを知らない者に、真の平和は理解できない。";
-        const fontSize = 18;
+        const fontSize = 16;
         let columns = 0;
         let rainDrops = [];
         let animationId;
         let lastTime = 0;
-        const frameDelay = 50;
+        const frameDelay = 30;
 
         function initMatrix() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             columns = Math.floor(canvas.width / fontSize);
             rainDrops = Array(columns).fill(0);
-
             if (animationId) cancelAnimationFrame(animationId);
             lastTime = 0;
             animationId = requestAnimationFrame(animateMatrix);
@@ -33,9 +33,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         function drawMatrix() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.06)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+            const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+            gradient.addColorStop(0, '#0f0');
+            gradient.addColorStop(0.5, '#0ff');
+            gradient.addColorStop(1, '#f0f');
+            ctx.fillStyle = gradient;
             ctx.font = `bold ${fontSize}px monospace`;
 
             for (let i = 0; i < rainDrops.length; i++) {
@@ -43,25 +48,20 @@ document.addEventListener('DOMContentLoaded', function () {
                     ? chars.charAt(Math.floor(Math.random() * chars.length))
                     : String.fromCharCode(0x30A0 + Math.random() * 96);
 
-                const x = i * fontSize;
-                const y = rainDrops[i] * fontSize;
+                const x = i * fontSize + (Math.random() * 2 - 1);
+                ctx.fillText(text, x, rainDrops[i] * fontSize);
 
-                ctx.fillStyle = '#0F0';
-                ctx.shadowColor = '#0F0';
-                ctx.shadowBlur = 8;
-                ctx.fillText(text, x, y);
-
-                if (y > canvas.height && Math.random() > 0.975) {
-                    rainDrops[i] = 0;
-                } else {
-                    rainDrops[i]++;
+                if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    rainDrops[i] = Math.random() > 0.8
+                        ? Math.floor(Math.random() * -10)
+                        : 0;
                 }
+
+                rainDrops[i]++;
             }
         }
 
         initMatrix();
-
-        let resizeTimeout;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimeout);
             resizeTimeout = setTimeout(initMatrix, 300);
@@ -92,9 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            if (targetId !== '#') {
-                scrollToSection(targetId);
-            }
+            if (targetId !== '#') scrollToSection(targetId);
         });
     });
 
@@ -108,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Contact Form
+    // Contact Form with EmailJS
     const contactForm = document.getElementById("contact-form");
     if (contactForm) {
         contactForm.addEventListener("submit", function (event) {
@@ -132,29 +130,23 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            const subject = `Contact from ${name}`;
-            const body = `${message}\n\nFrom: ${name}\nEmail: ${email}`;
-            const mailtoLink = `mailto:monin2771@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
             const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.textContent;
-            submitBtn.textContent = 'Opening Email Client...';
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
 
-            const emailWindow = window.open(mailtoLink, '_blank');
-
-            if (emailWindow) {
-                setTimeout(() => {
-                    showFormMessage('Your email client should now be open. Please send your message from there.', 'success');
+            emailjs.sendForm('service_8jnvuno', 'template_j1olq8p', this, 'PIfbMk9RypkX290xs')
+                .then(function () {
+                    showFormMessage('Message sent successfully! Thank you.', 'success');
                     contactForm.reset();
-                    submitBtn.textContent = originalBtnText;
+                    submitBtn.textContent = originalText;
                     submitBtn.disabled = false;
-                }, 1000);
-            } else {
-                showFormMessage('Failed to open email client. Please copy your message and send it manually to monin2771@gmail.com.', 'error');
-                submitBtn.textContent = originalBtnText;
-                submitBtn.disabled = false;
-            }
+                }, function (error) {
+                    console.error("EmailJS Error:", error);
+                    showFormMessage('An error occurred while sending. Please try again later.', 'error');
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
         });
     }
 
@@ -162,7 +154,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const messageElement = document.createElement('div');
         messageElement.className = `form-message ${type}`;
         messageElement.textContent = text;
-
         const contactForm = document.getElementById("contact-form");
         contactForm.insertBefore(messageElement, contactForm.firstChild);
 
@@ -182,4 +173,3 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
-
