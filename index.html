@@ -118,22 +118,22 @@
                 </div>
             </div>
         </section>
-
+        
         <section id="contact" class="section hidden">
             <div class="content-block">
                 <h2 class="dot-matrix">[ ███ CONTACT ███ ]</h2>
                 <div class="contact-wrapper">
-                    <form class="contact-form">
+                    <form id="contact-form" class="contact-form">
                         <div class="form-group">
-                            <input type="text" id="name" required>
+                            <input type="text" id="name" name="name" required>
                             <label for="name">NAME</label>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" required>
+                            <input type="email" id="email" name="email" required>
                             <label for="email">EMAIL</label>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" required></textarea>
+                            <textarea id="message" name="message" required></textarea>
                             <label for="message">MESSAGE</label>
                         </div>
                         <button type="submit" class="pixel-btn">SEND MESSAGE</button>
@@ -141,10 +141,11 @@
                 </div>
             </div>
         </section>
-
+        
+       
         <div class="social-icons">
             <a href="https://x.com/anime_naya42861/likes" aria-label="Twitter"><img src="Twitter.png" alt="X logo"></a>
-            <a href="https://github.com/NAYANMONI11" aria-label="GitHub"><img src="Github.png" alt="GitHub logo"></a>
+            <a href="https://github.com/NAYAN-MONI0110" aria-label="GitHub"><img src="Github.png" alt="GitHub logo"></a>
             <a href="https://www.linkedin.com/in/nayan-anime-a590972a0/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3B%2BH3o7kYiTsKdJtjFSbPkjQ%3D%3D" aria-label="LinkedIn"><img src="Linkedin.png" alt="LinkedIn logo"></a>
             <a href="https://www.instagram.com/_nayan._.moni?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram "><img src="Instagram.png" alt="Instagram logo"></a>
         </div>
@@ -164,5 +165,6 @@
     </nav>
 
     <script src="scripts.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </body>
 </html>
