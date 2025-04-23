@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOUR NAME | Developer Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Space+Mono:wght@400;700&display=swap">
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+    <canvas id="matrix"></canvas>
+
+    <div class="container">
+        <section id="hero">
+            <div class="hero-content">
+                <h1 class="dot-matrix">[ - PORTFOLIO -]</h1>
+                <p class="subtitle">
+                    BUILDING SECURE AND EFFICIENT SYSTEMS WITH PYTHON <br>
+                    FOCUSING ON CYBERSECURITY SOLUTIONS AND WEB DEVELOPMENT.
+                </p>
+                <button class="pixel-btn enter-btn">EXPLORE PORTFOLIO</button>
+            </div>
+        </section>
+
+        <section id="about" class="section hidden">
+            <div class="content-block">
+                <h2 class="dot-matrix">[ ███ ABOUT ███ ]</h2>
+                <div class="about-content">
+                    <p class="about-description">
+                        Hello! I'm Nayan, a student learning how to build secure and reliable software. 
+                        I'm interested in systems development and cybersecurity, and I enjoy working on 
+                        projects that help me understand how software works at a deeper level. I'm still learning, 
+                        but I’m always exploring, experimenting, and improving my skills through hands-on practice.
+                    </p>
+                    <div class="key-skills">
+                        <h3 class="skills-title">LEARNING NOW:</h3>
+                        <ul class="skills-list">
+                            <li>Python Programming</li>
+                            <li>Web Development</li>
+                            <li>Cybersecurity Tools</li>
+                            <li>Microcontrollers & Devices</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section hidden">
+            <div class="content-block">
+                <h2 class="dot-matrix">[ ███ SKILLS ███ ]</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-icon">[PY]</div>
+                        <h3>Python Development</h3>
+                        <p>Backend Systems, Automation, and Security Tools (Currently Learning and Experimenting)</p>
+                        <div class="skill-bar" style="--skill-level: 0%"></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">[SC]</div>
+                        <h3>Security</h3>
+                        <p>Vulnerability Analysis ,network security, and Reverse Engineering (Currently Learning and Experimenting)</p>
+                        <div class="skill-bar" style="--skill-level:0%"></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">[ES]</div>
+                        <h3> Embedded Systems</h3>
+                        <p>MCUs,sensors,Real-time control. </p>
+                        <div class="skill-bar" style="--skill-level: 0%"></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">[WD]</div>
+                        <h3>Web Development</h3>
+                        <p>Full-stack applications.</p>
+                        <div class="skill-bar" style="--skill-level: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section hidden">
+            <div class="content-block">
+                <h2 class="dot-matrix">[ ███ PROJECTS ███ ]</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Chatbot (Coming Soon )</h3>
+                        <p>A lightweight chatbot that responds to user input using predefined logic and simple natural language processing.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>NLP</span>
+                            <span>Automation</span>
+                        </div>
+                        <button class="pixel-btn">VIEW PROJECT</button>
+                    </div>
+                    <div class="project-card">
+                        <h3>BIT Z (Postponed) </h3>
+                        <p>A portable, open-source cyber tool that can clone, emulate, hack, and control RF, IR, NFC, Wi-Fi, Bluetooth, and USB — all from one device, with a color</p>
+                        <div class="project-tags">
+                            <span>ESP32-S3</span>
+                            <span>RF</span>
+                            <span>NFC</span>
+                            <span>Wi-Fi</span>
+                            <span>Bluetooth</span>
+                            <span>Security</span>
+                        </div>
+                        <button class="pixel-btn">VIEW CODE</button>
+                    </div>
+                    <div class="project-card">
+                        <h3>no defind</h3>
+                        <p>Comprehensive network scanning and vulnerability assessment tool with reporting.</p>
+                        <div class="project-tags">
+                            <span>###</span>
+                            <span>###</span>
+                            <span>###</span>
+                        </div>
+                        <button class="pixel-btn">VIEW CODE</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section hidden">
+            <div class="content-block">
+                <h2 class="dot-matrix">[ ███ CONTACT ███ ]</h2>
+                <div class="contact-wrapper">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" required>
+                            <label for="name">NAME</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" required>
+                            <label for="email">EMAIL</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" required></textarea>
+                            <label for="message">MESSAGE</label>
+                        </div>
+                        <button type="submit" class="pixel-btn">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <div class="social-icons">
+            <a href="https://x.com/anime_naya42861/likes" aria-label="Twitter"><img src="Twitter.png" alt="X logo"></a>
+            <a href="https://github.com/NAYANMONI11" aria-label="GitHub"><img src="Github.png" alt="GitHub logo"></a>
+            <a href="https://www.linkedin.com/in/nayan-anime-a590972a0/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3B%2BH3o7kYiTsKdJtjFSbPkjQ%3D%3D" aria-label="LinkedIn"><img src="Linkedin.png" alt="LinkedIn logo"></a>
+            <a href="https://www.instagram.com/_nayan._.moni?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram "><img src="Instagram.png" alt="Instagram logo"></a>
+        </div>
+
+        <footer>
+            <p>&copy; 2025. ALL RIGHTS RESERVED.</p>
+        </footer>
+    </div>
+
+    <nav class="main-nav hidden">
+        <ul>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <script src="portfolio.js"></script>
+</body>
+</html>
