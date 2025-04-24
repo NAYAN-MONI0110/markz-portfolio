@@ -1,3 +1,4 @@
+
 :root {
   --black: #000000;
   --white: #ffffff;
@@ -502,7 +503,7 @@ footer {
   }
 }
 
-/* Prevent overscrolling globally */
 html, body {
-  overscroll-behavior: none; /* Disable overscroll behavior *
+  overscroll-behavior: none;
+  touch-action: auto; /* Allow default touch scrolling */
 }
