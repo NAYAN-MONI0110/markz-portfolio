@@ -504,6 +504,5 @@ footer {
 
 /* Prevent overscrolling globally */
 html, body {
-  overscroll-behavior: none; /* Disable overscroll behavior */
-  touch-action: none; /* Optional: Disable touch actions */
+  overscroll-behavior: none; /* Disable overscroll behavior *
 }
