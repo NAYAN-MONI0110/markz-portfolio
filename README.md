@@ -25,6 +25,7 @@ markz-portfolio/
 ├── styles.css          # Custom styles
 ├── scripts.js          # JavaScript for interactivity
 ├── assets/
+│   └── screenshot-home.png
 │   ├── Github.png
 │   ├── Instagram.png
 │   ├── Linkedin.png
