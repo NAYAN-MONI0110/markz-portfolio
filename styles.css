@@ -411,10 +411,9 @@ canvas#matrix {
   width: 100%;
 }
 
-/* Social Icons */
+/* Social Icons Section */
 .social-icons {
   padding: 40px 20px;
-  background-color: #292a2e;
   text-align: center;
 }
 
@@ -431,7 +430,6 @@ canvas#matrix {
   width: 32px;
   height: 32px;
 }
-
 
 
 /* Footer */
