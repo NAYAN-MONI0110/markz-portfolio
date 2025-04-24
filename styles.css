@@ -411,31 +411,27 @@ canvas#matrix {
   width: 100%;
 }
 
-/* Social Icons Section */
+/* Social Icons */
 .social-icons {
   padding: 40px 20px;
+  background-color: #292a2e;
   text-align: center;
 }
 
 .social-icons a {
   margin: 0 15px;
   transition: opacity 0.3s ease;
-  text-decoration: none;
-  border-bottom: none;
-  box-shadow: none;
-  position: relative;
 }
 
-.social-icons a::after,
-.social-icons a::before {
-  content: none !important;
-  display: none !important;
+.social-icons a:hover {
+  opacity: 0.75;
 }
 
 .social-icons img {
   width: 32px;
   height: 32px;
 }
+
 
 
 /* Footer */
