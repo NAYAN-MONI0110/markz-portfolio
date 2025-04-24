@@ -31,11 +31,13 @@ markz-portfolio/
 │   └── Twitter.png
 ```
 
- 📸 Screenshots
+📸 Screenshots
 
-*Screenshots coming soon!*
+🏠 Home Page
 
- 🧑‍💻 Author
+![Home Page](assets/screenshot-home.png)
+
+🧑‍💻 Author
 
 Nayan Moni
 GitHub: [@NAYAN-MONI0110](https://github.com/NAYAN-MONI0110)
