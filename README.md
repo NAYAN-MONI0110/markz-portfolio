@@ -1,4 +1,4 @@
- Markz Portfolio
+Markz Portfolio
 
 **Markz Portfolio** is a sleek, responsive, and modern personal portfolio website designed to highlight your skills, projects, and professional background. It functions as a digital resume and is ideal for developers, designers, or creatives who want to establish a strong online presence.
 
@@ -25,7 +25,8 @@ markz-portfolio/
 ├── styles.css          # Custom styles
 ├── scripts.js          # JavaScript for interactivity
 ├── assets/
-│   └── screenshot-home.png
+│   ├── screenshot-home.png
+│   ├── Demo.gif
 │   ├── Github.png
 │   ├── Instagram.png
 │   ├── Linkedin.png
@@ -37,6 +38,9 @@ markz-portfolio/
 🏠 Home Page
 
 ![Home Page](assets/screenshot-home.png)
+
+📽️ Demo Video
+
 ![Demo](assets/demo.gif)
 
 
