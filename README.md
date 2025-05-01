@@ -37,6 +37,8 @@ markz-portfolio/
 🏠 Home Page
 
 ![Home Page](assets/screenshot-home.png)
+![Demo](assets/demo.gif)
+
 
 🧑‍💻 Author
 
