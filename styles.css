@@ -411,6 +411,11 @@ canvas#matrix {
   width: 100%;
 }
 
+
+
+
+
+
 /* Social Icons Section */
 .social-icons {
   padding: 40px 20px;
@@ -420,6 +425,15 @@ canvas#matrix {
 .social-icons a {
   margin: 0 15px;
   transition: opacity 0.3s ease;
+  text-decoration: none; /* Remove underline */
+  outline: none;         /* Remove default blue focus border */
+  box-shadow: none;      /* Prevent unwanted outlines/shadows */
+  display: inline-block;
+}
+
+.social-icons a:focus {
+  outline: 2px dashed var(--white); /* Accessible focus indicator */
+  outline-offset: 4px;
 }
 
 .social-icons a:hover {
@@ -429,7 +443,19 @@ canvas#matrix {
 .social-icons img {
   width: 32px;
   height: 32px;
+  display: inline-block;
+  vertical-align: middle;
 }
+
+
+
+
+
+
+
+
+
+
 /* Footer */
 footer {
   text-align: center;
