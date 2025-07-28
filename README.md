@@ -1,6 +1,6 @@
-Markz Portfolio
+ Portfolio
 
-**Markz Portfolio** is a sleek, responsive, and modern personal portfolio website designed to highlight your skills, projects, and professional background. It functions as a digital resume and is ideal for developers, designers, or creatives who want to establish a strong online presence.
+This is a sleek, responsive, and modern personal portfolio website designed to highlight your skills, projects, and professional background. It functions as a digital resume and is ideal for developers, designers, or creatives who want to establish a strong online presence.
 
 
  🧰 Tech Stack
@@ -47,7 +47,7 @@ markz-portfolio/
 
 🧑‍💻 Author
 
-Nayan Moni
+LAZY DIV
 GitHub: [@NAYAN-MONI0110](https://github.com/NAYAN-MONI0110)
 
 📜 License
