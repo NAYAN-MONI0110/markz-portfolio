@@ -1,6 +1,6 @@
  Portfolio
 
-This is a sleek, responsive, and modern personal portfolio website designed to highlight your skills, projects, and professional background. It functions as a digital resume and is ideal for developers, designers, or creatives who want to establish a strong online presence.
+Maybe This is a sleek, responsive, and modern personal portfolio website designed to highlight your skills, projects, and professional background. It functions as a digital resume and is ideal for developers, designers, or creatives who want to establish a strong online presence.
 
 
  🧰 Tech Stack
